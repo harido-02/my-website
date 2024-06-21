@@ -1,0 +1,93 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background: #000;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #555;
+}
+
+.content {
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Limit maximum height to 400px; adjust as needed */
+}
+
+#intro, #background, #interests, #personality, #likes-dislikes, #phobias, #contact, #creative-works, #goals {
+    display: none;
+}
+
+#intro {
+    display: block;
+}
+
+@keyframes stars {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(100%, 100%, 0); }
+}
+
+.stars {
+    width: 2000px;
+    height: 2000px;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    position: absolute;
+    animation: stars 100s linear infinite;
+    z-index: -1;
+}
+
+.stars {
+    width: 2000px;
+    height: 2000px;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none; /* Ensures the stars don't interfere with content */
+}
+
+.stars > div {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: twinkling 8s infinite ease-in-out;
+}
+
+@keyframes twinkling {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, -50px);
+    }
+}
